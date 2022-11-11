@@ -117,6 +117,7 @@ def part2_forward_kinematics(joint_name, joint_parent, joint_offset, motion_data
         joint_orientations: np.ndarray，形状为(M, 4)的numpy数组，包含着所有关节的全局旋转(四元数)
     Tips:
         1. joint_orientations的四元数顺序为(x, y, z, w)
+        2. from_euler时注意使用大写的XYZ
     """
     joint_positions = None
     joint_orientations = None
@@ -131,6 +132,7 @@ def part3_retarget_func(T_pose_bvh_path, A_pose_bvh_path):
         motion_data: np.ndarray，形状为(N,X)的numpy数组，其中N为帧数，X为Channel数。retarget后的运动数据
     Tips:
         两个bvh的joint name顺序可能不一致哦(
+        as_euler时也需要大写的XYZ
     """
     motion_data = None
     return motion_data
